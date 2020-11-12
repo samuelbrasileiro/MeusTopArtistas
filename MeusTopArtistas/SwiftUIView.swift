@@ -7,83 +7,91 @@
 
 import SwiftUI
 
-struct ArtistImageView: View{
+protocol ArtistsDelegate{
+    func removeItem(at index: Int)
+}
+struct ArtistView: View{
+    
     @ObservedObject var artist: Artist
+    var index: Int
+    var delegate : ArtistsDelegate?
     
     var body: some View{
-        (artist.image == nil ?
-            Image(systemName: "person.circle.fill") : Image(uiImage: artist.image!))
-            .resizable()
-            .foregroundColor(Color(.black))
-            .frame(minWidth: 0, maxWidth: 40, minHeight: 0, maxHeight: 40, alignment: .leading)
-            .aspectRatio(contentMode: .fill)
+        //1
+        HStack(alignment: .center, spacing: 6){
+            Spacer()
+            //7
+            Link(destination: URL(string: artist.uri)!){
+                //4
+                (artist.image == nil ?
+                    //2
+                    Image(systemName: "person.circle.fill") : Image(uiImage: artist.image!))
+                    .resizable()
+                    .foregroundColor(Color(.black))
+                    .frame(width: 40, height: 40)
+                    .aspectRatio(contentMode: .fill)
+                    .cornerRadius(10)
+                //3
+                Text("\(index + 1). " + artist.name)
+                    .font(.system(size: 27, weight: .bold, design: .rounded))
+                    .foregroundColor(Color(.black))
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
+            }
+            //6
+            Spacer(minLength: 10)
+            //5
+            Button(action: {
+                //extra
+                delegate?.removeItem(at: index)
+            }){
+                
+                Image(systemName: "multiply.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(minWidth: 0, maxWidth: 20, minHeight: 0, maxHeight: 20, alignment: .leading)
+                    .foregroundColor(Color(.black))
+            }
+            //DEPOIS SO
+            Spacer(minLength: 10)
+        }
+        
+        
     }
 }
 
-
-
-struct ArtistsView: View {
+struct ArtistView_Previews: PreviewProvider {
     
+    static var previews: some View {
+        ArtistView(artist: ArtistsBank().items![0], index: 0)
+        
+    }
+}
+
+struct ArtistsView: View, ArtistsDelegate {
+    
+    //1
     @ObservedObject var bank: ArtistsBank
     
+    func removeItem(at index: Int) {
+        bank.items?.remove(at: index)
+    }
     
     var body: some View{
-        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8) {
-            Spacer()
-            Button(action: {
-                bank.clear()
-                bank.addItems()
-                
-            }){
-                Text("Meus Top Artistas")
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-            }
-            .foregroundColor(Color(.orange))
-            .padding()
-            .background(Color(.black))
-            .cornerRadius(10)
-            
-            Spacer(minLength: 10)
-            
+            //2
             ScrollView {
+                //3
                 LazyVStack(alignment: .center, spacing: 8) {
-                    
+                    //4
                     ForEach((0..<bank.items!.count), id: \.self){ index in
-                        HStack(alignment: .center, spacing: 6){
-                            Spacer()
-                            Link(destination: URL(string: bank.items![index].uri)!){
-                                
-                                //(bank.items![index].image == nil ?
-                                //Image(systemName: "person.circle.fill") : Image(uiImage: bank.items![index].image!))
-                                ArtistImageView(artist: bank.items![index])
-                                
-                                Text("\(index + 1). " + bank.items![index].name)
-                                    .font(.system(size: 28, weight: .bold, design: .rounded))
-                                    .foregroundColor(Color(.black))
-                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
-                            }
-                            Spacer(minLength: 10)
-                            Button(action: {
-                                bank.items!.remove(at: index)
-                            }){
-                                
-                                Image(systemName: "multiply.circle.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(minWidth: 0, maxWidth: 20, minHeight: 0, maxHeight: 20, alignment: .leading)
-                                    .foregroundColor(Color(.black))
-                            }
-                            Spacer(minLength: 10)
-                        }
+                        
+                        ArtistView(artist: bank.items![index], index: index, delegate: self)
+                        
                         Divider()
                     }
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                .background(Color(.orange))
-            }.navigationBarTitle("Meus Top Artistas", displayMode: .inline)
-            
-        }.background(Color(.orange))
-        
+                
+                
+            }
         
     }
     
@@ -92,6 +100,7 @@ struct ArtistsView: View {
 struct ArtistsView_Previews: PreviewProvider {
     static var previews: some View {
         ArtistsView(bank: ArtistsBank())
+        
     }
 }
 

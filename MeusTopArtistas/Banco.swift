@@ -13,18 +13,16 @@ class Artist: ObservableObject{
     var name: String
     var imageURL: String?
     var uri: String
+    
     @Published var image: UIImage?
+    
     init(name: String, imageURL: String, uri: String){
         self.name = name
         self.imageURL = imageURL
         self.uri = uri
     }
     
-    init(name: String, image: UIImage, uri: String){
-        self.name = name
-        self.image = image
-        self.uri = uri
-    }
+
     func toSafariURL()->String{
         return "https://open.spotify.com/artist/" + self.uri.split(separator: ":").last!
     }
@@ -34,9 +32,10 @@ class Artist: ObservableObject{
 class ArtistsBank: ObservableObject{
     
     @Published var items: [Artist]?
+    
     init() {
-        clear()
-        
+        self.clear()
+        self.addItems()
         
     }
     func clear(){
@@ -58,7 +57,6 @@ class ArtistsBank: ObservableObject{
                     }
                     
                     if let image = UIImage(data: data){
-                        //self.items![index] = Artist(name: item.name, image: image, uri: item.uri)
                         self.items![index].image = image
                     }
                 }
@@ -143,3 +141,4 @@ extension ArtistsBank{
         return artists
     }
 }
+
