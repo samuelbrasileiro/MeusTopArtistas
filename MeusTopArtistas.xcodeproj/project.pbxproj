@@ -15,6 +15,8 @@
 		358513F12522402800EE7181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358513EF2522402800EE7181 /* LaunchScreen.storyboard */; };
 		358513FA2522404A00EE7181 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513F92522404A00EE7181 /* SwiftUIView.swift */; };
 		358513FD2522406600EE7181 /* Banco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513FC2522406600EE7181 /* Banco.swift */; };
+		35BE8EAE2562B918009D5BA7 /* StaggeredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */; };
+		35BE8EAF2562B918009D5BA7 /* StaggeredLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		358513F22522402800EE7181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358513F92522404A00EE7181 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		358513FC2522406600EE7181 /* Banco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banco.swift; sourceTree = "<group>"; };
+		35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaggeredList.swift; sourceTree = "<group>"; };
+		35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaggeredLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				358513E62522402700EE7181 /* SceneDelegate.swift */,
 				358513E82522402700EE7181 /* ViewController.swift */,
 				358513F92522404A00EE7181 /* SwiftUIView.swift */,
+				35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */,
+				35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */,
 				358513FC2522406600EE7181 /* Banco.swift */,
 				358513EA2522402700EE7181 /* Main.storyboard */,
 				358513ED2522402800EE7181 /* Assets.xcassets */,
@@ -146,7 +152,9 @@
 				358513E92522402700EE7181 /* ViewController.swift in Sources */,
 				358513E52522402700EE7181 /* AppDelegate.swift in Sources */,
 				358513FA2522404A00EE7181 /* SwiftUIView.swift in Sources */,
+				35BE8EAF2562B918009D5BA7 /* StaggeredLayout.swift in Sources */,
 				358513E72522402700EE7181 /* SceneDelegate.swift in Sources */,
+				35BE8EAE2562B918009D5BA7 /* StaggeredList.swift in Sources */,
 				358513FD2522406600EE7181 /* Banco.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

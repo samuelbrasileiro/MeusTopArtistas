@@ -9,12 +9,12 @@ import UIKit
 import SwiftUI
 
 
-class Artist {
+class Artist: ObservableObject, Identifiable {
     var name: String
     var imageURL: String?
     var uri: String
     
-    var image: UIImage?
+    @Published var image: UIImage?
     
     init(name: String, imageURL: String, uri: String){
         self.name = name
@@ -29,9 +29,9 @@ class Artist {
     
 }
 
-class ArtistsBank{
+class ArtistsBank: ObservableObject, Identifiable{
     
-    var items: [Artist]?
+    @Published var items: [Artist]?
     
     init() {
         self.clear()
