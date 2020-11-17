@@ -21,6 +21,8 @@
 		358513FD2522406600EE7181 /* Banco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513FC2522406600EE7181 /* Banco.swift */; };
 		35BE8EAE2562B918009D5BA7 /* StaggeredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */; };
 		35BE8EAF2562B918009D5BA7 /* StaggeredLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */; };
+		35FFE30A256401B800F3E8F0 /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE309256401B800F3E8F0 /* MusicView.swift */; };
+		35FFE30D256403D400F3E8F0 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE30C256403D400F3E8F0 /* Song.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		358513FC2522406600EE7181 /* Banco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banco.swift; sourceTree = "<group>"; };
 		35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaggeredList.swift; sourceTree = "<group>"; };
 		35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaggeredLayout.swift; sourceTree = "<group>"; };
+		35FFE309256401B800F3E8F0 /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
+		35FFE30C256403D400F3E8F0 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				358513F92522404A00EE7181 /* SwiftUIView.swift */,
 				3543976325630586005FD146 /* SearchBarView.swift */,
 				3543976925630F7F005FD146 /* ArtistView.swift */,
+				35FFE309256401B800F3E8F0 /* MusicView.swift */,
+				35FFE30C256403D400F3E8F0 /* Song.swift */,
 				3543976C25631717005FD146 /* InterestView.swift */,
 				35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */,
 				3543976625630C79005FD146 /* UIEditingExtensions.swift */,
@@ -171,6 +177,8 @@
 				358513E72522402700EE7181 /* SceneDelegate.swift in Sources */,
 				3543976A25630F7F005FD146 /* ArtistView.swift in Sources */,
 				35BE8EAE2562B918009D5BA7 /* StaggeredList.swift in Sources */,
+				35FFE30A256401B800F3E8F0 /* MusicView.swift in Sources */,
+				35FFE30D256403D400F3E8F0 /* Song.swift in Sources */,
 				358513FD2522406600EE7181 /* Banco.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
