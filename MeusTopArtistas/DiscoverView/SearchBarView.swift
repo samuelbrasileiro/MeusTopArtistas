@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// The search bar view
 struct SearchBarView: View{
     @ObservedObject var bank: ArtistsBank
     

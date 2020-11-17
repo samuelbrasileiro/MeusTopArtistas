@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// A music item
 struct MusicView: View {
     @State var mj = ""
     @ObservedObject var artist: Artist

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A singular artist view containing its data
 struct ArtistView: View{
     
     @ObservedObject var artist: Artist
@@ -15,7 +16,9 @@ struct ArtistView: View{
     @State var stroke: Color = Color.clear
     @State var foregroundColor: Color = Color(.systemPurple)
     @State var backgroundColor: Color = Color(.systemGray5)
+    
     var body: some View{
+        
         Button(action: {
             isSelected = !isSelected
             if isSelected{
@@ -30,6 +33,7 @@ struct ArtistView: View{
             }
             
         }){
+            
             if artist.name.count < 13 {
                 (artist.image == nil ? Image(systemName: "person.circle.fill") : Image(uiImage: artist.image!))
                     .resizable()
@@ -39,13 +43,18 @@ struct ArtistView: View{
                 
             }
             else{
+                ZStack(alignment: .trailing){
                 Text(artist.name)
                     .padding()
                     .background(backgroundColor)
                     .foregroundColor(foregroundColor)
                     .cornerRadius(10)
-                
-                
+                }
+                if artist.previewURL != nil{
+                    Link(destination: URL(string: artist.previewURL!)!){
+                        Image(systemName: "play.fill")
+                    }
+                }
             }
         }
         
@@ -58,7 +67,7 @@ struct ArtistView: View{
 struct ArtistView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ArtistView(artist: ArtistsBank().items![0])
+        ArtistView(artist: ArtistsBank().items![1])
         
     }
 }

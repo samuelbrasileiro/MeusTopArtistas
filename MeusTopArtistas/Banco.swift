@@ -9,19 +9,58 @@ import UIKit
 import SwiftUI
 
 
+/// This class is an artist object, that contains a name, imageURL and uri, at start.
+/// When created, it gets (async) its image and previewURL
 class Artist: ObservableObject, Identifiable {
     var name: String
     var imageURL: String?
     var uri: String
     
+    @Published var previewURL: String?
+    
     @Published var image: UIImage?
+    
+    
     
     init(name: String, imageURL: String, uri: String){
         self.name = name
         self.imageURL = imageURL
         self.uri = uri
+        
+        getImage()
+        getPreviewURL()
+        
     }
     
+    /// From image URL this function downloads and saves the
+    /// image data in 'image' attribute
+    func getImage(){
+        let request = URLRequest(url: URL(string: imageURL!)!)
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let data = data else {
+                    return
+                }
+                
+                if let image = UIImage(data: data){
+                    self.image = image
+                }
+            }
+        }.resume()
+    }
+    
+    /// This function uses Apple Music API to get a song preview from the artist
+    /// using search in scope
+    func getPreviewURL(){
+        SearchSong.fetchBy(artistName: name){result in
+            if case .success(let song) = result {
+                self.previewURL = song.data![0].attributes!.previews![0].url
+            }
+            else if case .failure(let error) = result{
+                print(error.localizedDescription)
+            }
+        }
+    }
 
     func toSafariURL()->String{
         return "https://open.spotify.com/artist/" + self.uri.split(separator: ":").last!
@@ -29,12 +68,14 @@ class Artist: ObservableObject, Identifiable {
     
 }
 
+/// This is our bank. Here we store all the stuff we are going to use
 class ArtistsBank: ObservableObject, Identifiable{
     
     @Published var items: [Artist]?
     
     @Published var searchText: String = ""
     @Published var isSearching: Bool = false
+    
     init() {
         self.clear()
         self.addItems()
@@ -44,25 +85,13 @@ class ArtistsBank: ObservableObject, Identifiable{
         items = []
     }
     
+    /// This function adds all items in the array 'items'
     func addItems(){
         for artist in self.getArtists(){
             let item = artist
             items!.append(item)
             
-            let index = items!.count - 1
             
-            let request = URLRequest(url: URL(string: item.imageURL!)!)
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                DispatchQueue.main.async {
-                    guard let data = data else {
-                        return
-                    }
-                    
-                    if let image = UIImage(data: data){
-                        self.items![index].image = image
-                    }
-                }
-            }.resume()
         }
     }
     

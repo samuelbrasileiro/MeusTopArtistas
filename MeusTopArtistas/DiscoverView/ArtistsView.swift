@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Our main view
 struct ArtistsView: View {
     @ObservedObject var bank: ArtistsBank
     @State var numberOfColumns = 2

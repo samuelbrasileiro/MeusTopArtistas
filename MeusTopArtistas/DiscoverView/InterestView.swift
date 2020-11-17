@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A singular interest item view
 struct InterestView: View{
     @ObservedObject var artist: Artist
     

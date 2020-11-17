@@ -11,13 +11,14 @@
 		3543976725630C79005FD146 /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976625630C79005FD146 /* UIEditingExtensions.swift */; };
 		3543976A25630F7F005FD146 /* ArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976925630F7F005FD146 /* ArtistView.swift */; };
 		3543976D25631717005FD146 /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976C25631717005FD146 /* InterestView.swift */; };
+		354D984F256432000054AC72 /* SearchSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D984E256431FF0054AC72 /* SearchSong.swift */; };
 		358513E52522402700EE7181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513E42522402700EE7181 /* AppDelegate.swift */; };
 		358513E72522402700EE7181 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513E62522402700EE7181 /* SceneDelegate.swift */; };
 		358513E92522402700EE7181 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513E82522402700EE7181 /* ViewController.swift */; };
 		358513EC2522402700EE7181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358513EA2522402700EE7181 /* Main.storyboard */; };
 		358513EE2522402800EE7181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 358513ED2522402800EE7181 /* Assets.xcassets */; };
 		358513F12522402800EE7181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358513EF2522402800EE7181 /* LaunchScreen.storyboard */; };
-		358513FA2522404A00EE7181 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513F92522404A00EE7181 /* SwiftUIView.swift */; };
+		358513FA2522404A00EE7181 /* ArtistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513F92522404A00EE7181 /* ArtistsView.swift */; };
 		358513FD2522406600EE7181 /* Banco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513FC2522406600EE7181 /* Banco.swift */; };
 		35BE8EAE2562B918009D5BA7 /* StaggeredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */; };
 		35BE8EAF2562B918009D5BA7 /* StaggeredLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */; };
@@ -30,6 +31,7 @@
 		3543976625630C79005FD146 /* UIEditingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEditingExtensions.swift; sourceTree = "<group>"; };
 		3543976925630F7F005FD146 /* ArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistView.swift; sourceTree = "<group>"; };
 		3543976C25631717005FD146 /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
+		354D984E256431FF0054AC72 /* SearchSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSong.swift; sourceTree = "<group>"; };
 		358513E12522402700EE7181 /* MeusTopArtistas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeusTopArtistas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358513E42522402700EE7181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		358513E62522402700EE7181 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		358513ED2522402800EE7181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		358513F02522402800EE7181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		358513F22522402800EE7181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		358513F92522404A00EE7181 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		358513F92522404A00EE7181 /* ArtistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsView.swift; sourceTree = "<group>"; };
 		358513FC2522406600EE7181 /* Banco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banco.swift; sourceTree = "<group>"; };
 		35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaggeredList.swift; sourceTree = "<group>"; };
 		35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaggeredLayout.swift; sourceTree = "<group>"; };
@@ -57,6 +59,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		354D9851256434830054AC72 /* Apple Music Classes */ = {
+			isa = PBXGroup;
+			children = (
+				35FFE30C256403D400F3E8F0 /* Song.swift */,
+				354D984E256431FF0054AC72 /* SearchSong.swift */,
+			);
+			path = "Apple Music Classes";
+			sourceTree = "<group>";
+		};
+		354D9853256434A80054AC72 /* DiscoverView */ = {
+			isa = PBXGroup;
+			children = (
+				358513F92522404A00EE7181 /* ArtistsView.swift */,
+				3543976325630586005FD146 /* SearchBarView.swift */,
+				3543976925630F7F005FD146 /* ArtistView.swift */,
+				35FFE309256401B800F3E8F0 /* MusicView.swift */,
+				3543976C25631717005FD146 /* InterestView.swift */,
+			);
+			path = DiscoverView;
+			sourceTree = "<group>";
+		};
+		354D9857256435490054AC72 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				3543976625630C79005FD146 /* UIEditingExtensions.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
 		358513D82522402600EE7181 = {
 			isa = PBXGroup;
 			children = (
@@ -79,16 +110,12 @@
 				358513E42522402700EE7181 /* AppDelegate.swift */,
 				358513E62522402700EE7181 /* SceneDelegate.swift */,
 				358513E82522402700EE7181 /* ViewController.swift */,
-				358513F92522404A00EE7181 /* SwiftUIView.swift */,
-				3543976325630586005FD146 /* SearchBarView.swift */,
-				3543976925630F7F005FD146 /* ArtistView.swift */,
-				35FFE309256401B800F3E8F0 /* MusicView.swift */,
-				35FFE30C256403D400F3E8F0 /* Song.swift */,
-				3543976C25631717005FD146 /* InterestView.swift */,
-				35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */,
-				3543976625630C79005FD146 /* UIEditingExtensions.swift */,
-				35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */,
+				354D9853256434A80054AC72 /* DiscoverView */,
+				354D9851256434830054AC72 /* Apple Music Classes */,
+				354D9857256435490054AC72 /* Extra */,
 				358513FC2522406600EE7181 /* Banco.swift */,
+				35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */,
+				35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */,
 				358513EA2522402700EE7181 /* Main.storyboard */,
 				358513ED2522402800EE7181 /* Assets.xcassets */,
 				358513EF2522402800EE7181 /* LaunchScreen.storyboard */,
@@ -171,7 +198,8 @@
 				358513E52522402700EE7181 /* AppDelegate.swift in Sources */,
 				3543976D25631717005FD146 /* InterestView.swift in Sources */,
 				3543976725630C79005FD146 /* UIEditingExtensions.swift in Sources */,
-				358513FA2522404A00EE7181 /* SwiftUIView.swift in Sources */,
+				354D984F256432000054AC72 /* SearchSong.swift in Sources */,
+				358513FA2522404A00EE7181 /* ArtistsView.swift in Sources */,
 				35BE8EAF2562B918009D5BA7 /* StaggeredLayout.swift in Sources */,
 				3543976425630586005FD146 /* SearchBarView.swift in Sources */,
 				358513E72522402700EE7181 /* SceneDelegate.swift in Sources */,
