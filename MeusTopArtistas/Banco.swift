@@ -33,6 +33,8 @@ class ArtistsBank: ObservableObject, Identifiable{
     
     @Published var items: [Artist]?
     
+    @Published var searchText: String = ""
+    @Published var isSearching: Bool = false
     init() {
         self.clear()
         self.addItems()

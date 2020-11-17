@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3543976425630586005FD146 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976325630586005FD146 /* SearchBarView.swift */; };
+		3543976725630C79005FD146 /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976625630C79005FD146 /* UIEditingExtensions.swift */; };
+		3543976A25630F7F005FD146 /* ArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976925630F7F005FD146 /* ArtistView.swift */; };
+		3543976D25631717005FD146 /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976C25631717005FD146 /* InterestView.swift */; };
 		358513E52522402700EE7181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513E42522402700EE7181 /* AppDelegate.swift */; };
 		358513E72522402700EE7181 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513E62522402700EE7181 /* SceneDelegate.swift */; };
 		358513E92522402700EE7181 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513E82522402700EE7181 /* ViewController.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3543976325630586005FD146 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		3543976625630C79005FD146 /* UIEditingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEditingExtensions.swift; sourceTree = "<group>"; };
+		3543976925630F7F005FD146 /* ArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistView.swift; sourceTree = "<group>"; };
+		3543976C25631717005FD146 /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
 		358513E12522402700EE7181 /* MeusTopArtistas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeusTopArtistas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358513E42522402700EE7181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		358513E62522402700EE7181 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +76,11 @@
 				358513E62522402700EE7181 /* SceneDelegate.swift */,
 				358513E82522402700EE7181 /* ViewController.swift */,
 				358513F92522404A00EE7181 /* SwiftUIView.swift */,
+				3543976325630586005FD146 /* SearchBarView.swift */,
+				3543976925630F7F005FD146 /* ArtistView.swift */,
+				3543976C25631717005FD146 /* InterestView.swift */,
 				35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */,
+				3543976625630C79005FD146 /* UIEditingExtensions.swift */,
 				35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */,
 				358513FC2522406600EE7181 /* Banco.swift */,
 				358513EA2522402700EE7181 /* Main.storyboard */,
@@ -151,9 +163,13 @@
 			files = (
 				358513E92522402700EE7181 /* ViewController.swift in Sources */,
 				358513E52522402700EE7181 /* AppDelegate.swift in Sources */,
+				3543976D25631717005FD146 /* InterestView.swift in Sources */,
+				3543976725630C79005FD146 /* UIEditingExtensions.swift in Sources */,
 				358513FA2522404A00EE7181 /* SwiftUIView.swift in Sources */,
 				35BE8EAF2562B918009D5BA7 /* StaggeredLayout.swift in Sources */,
+				3543976425630586005FD146 /* SearchBarView.swift in Sources */,
 				358513E72522402700EE7181 /* SceneDelegate.swift in Sources */,
+				3543976A25630F7F005FD146 /* ArtistView.swift in Sources */,
 				35BE8EAE2562B918009D5BA7 /* StaggeredList.swift in Sources */,
 				358513FD2522406600EE7181 /* Banco.swift in Sources */,
 			);
