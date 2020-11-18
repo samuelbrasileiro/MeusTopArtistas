@@ -12,6 +12,7 @@ import SwiftUI
 /// This class is an artist object, that contains a name, imageURL and uri, at start.
 /// When created, it gets (async) its image and previewURL
 class Artist: ObservableObject, Identifiable {
+    
     var name: String
     var imageURL: String?
     var uri: String
@@ -53,8 +54,8 @@ class Artist: ObservableObject, Identifiable {
     /// using search in scope
     func getPreviewURL(){
         SearchSong.fetchBy(artistName: name){result in
-            if case .success(let song) = result {
-                self.previewURL = song.data![0].attributes!.previews![0].url
+            if case .success(let songs) = result {
+                self.previewURL = songs.data![0].attributes!.previews![0].url
             }
             else if case .failure(let error) = result{
                 print(error.localizedDescription)

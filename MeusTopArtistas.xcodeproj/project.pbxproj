@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351E9C5525657D1A0046DBA4 /* LazyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351E9C5425657D1A0046DBA4 /* LazyWaterfallGrid.swift */; };
 		3543976425630586005FD146 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976325630586005FD146 /* SearchBarView.swift */; };
 		3543976725630C79005FD146 /* UIEditingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976625630C79005FD146 /* UIEditingExtensions.swift */; };
 		3543976A25630F7F005FD146 /* ArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543976925630F7F005FD146 /* ArtistView.swift */; };
@@ -20,13 +21,12 @@
 		358513F12522402800EE7181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358513EF2522402800EE7181 /* LaunchScreen.storyboard */; };
 		358513FA2522404A00EE7181 /* ArtistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513F92522404A00EE7181 /* ArtistsView.swift */; };
 		358513FD2522406600EE7181 /* Banco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358513FC2522406600EE7181 /* Banco.swift */; };
-		35BE8EAE2562B918009D5BA7 /* StaggeredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */; };
-		35BE8EAF2562B918009D5BA7 /* StaggeredLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */; };
 		35FFE30A256401B800F3E8F0 /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE309256401B800F3E8F0 /* MusicView.swift */; };
 		35FFE30D256403D400F3E8F0 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFE30C256403D400F3E8F0 /* Song.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		351E9C5425657D1A0046DBA4 /* LazyWaterfallGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyWaterfallGrid.swift; sourceTree = "<group>"; };
 		3543976325630586005FD146 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		3543976625630C79005FD146 /* UIEditingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEditingExtensions.swift; sourceTree = "<group>"; };
 		3543976925630F7F005FD146 /* ArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistView.swift; sourceTree = "<group>"; };
@@ -42,8 +42,6 @@
 		358513F22522402800EE7181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358513F92522404A00EE7181 /* ArtistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsView.swift; sourceTree = "<group>"; };
 		358513FC2522406600EE7181 /* Banco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banco.swift; sourceTree = "<group>"; };
-		35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaggeredList.swift; sourceTree = "<group>"; };
-		35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaggeredLayout.swift; sourceTree = "<group>"; };
 		35FFE309256401B800F3E8F0 /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		35FFE30C256403D400F3E8F0 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +81,7 @@
 		354D9857256435490054AC72 /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				351E9C5425657D1A0046DBA4 /* LazyWaterfallGrid.swift */,
 				3543976625630C79005FD146 /* UIEditingExtensions.swift */,
 			);
 			path = Extra;
@@ -114,8 +113,6 @@
 				354D9851256434830054AC72 /* Apple Music Classes */,
 				354D9857256435490054AC72 /* Extra */,
 				358513FC2522406600EE7181 /* Banco.swift */,
-				35BE8EAD2562B918009D5BA7 /* StaggeredLayout.swift */,
-				35BE8EAC2562B918009D5BA7 /* StaggeredList.swift */,
 				358513EA2522402700EE7181 /* Main.storyboard */,
 				358513ED2522402800EE7181 /* Assets.xcassets */,
 				358513EF2522402800EE7181 /* LaunchScreen.storyboard */,
@@ -200,12 +197,11 @@
 				3543976725630C79005FD146 /* UIEditingExtensions.swift in Sources */,
 				354D984F256432000054AC72 /* SearchSong.swift in Sources */,
 				358513FA2522404A00EE7181 /* ArtistsView.swift in Sources */,
-				35BE8EAF2562B918009D5BA7 /* StaggeredLayout.swift in Sources */,
 				3543976425630586005FD146 /* SearchBarView.swift in Sources */,
 				358513E72522402700EE7181 /* SceneDelegate.swift in Sources */,
 				3543976A25630F7F005FD146 /* ArtistView.swift in Sources */,
-				35BE8EAE2562B918009D5BA7 /* StaggeredList.swift in Sources */,
 				35FFE30A256401B800F3E8F0 /* MusicView.swift in Sources */,
+				351E9C5525657D1A0046DBA4 /* LazyWaterfallGrid.swift in Sources */,
 				35FFE30D256403D400F3E8F0 /* Song.swift in Sources */,
 				358513FD2522406600EE7181 /* Banco.swift in Sources */,
 			);

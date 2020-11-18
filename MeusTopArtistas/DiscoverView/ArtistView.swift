@@ -43,13 +43,13 @@ struct ArtistView: View{
                 
             }
             else{
-                ZStack(alignment: .trailing){
+                
                 Text(artist.name)
                     .padding()
                     .background(backgroundColor)
                     .foregroundColor(foregroundColor)
                     .cornerRadius(10)
-                }
+                
                 if artist.previewURL != nil{
                     Link(destination: URL(string: artist.previewURL!)!){
                         Image(systemName: "play.fill")
@@ -70,4 +70,46 @@ struct ArtistView_Previews: PreviewProvider {
         ArtistView(artist: ArtistsBank().items![1])
         
     }
+}
+
+enum ItemType {
+    case music
+    case image
+}
+
+class DiscoverItem{
+    var id: String
+    var url: String?
+    var type: ItemType
+    
+    init(id: String, type: ItemType){
+        self.id = id
+        self.type = type
+    }
+    
+}
+
+class MusicItem: DiscoverItem{
+    var title: String?
+    var artistName: String?
+    
+    var imageAlbumURL: String?
+    var imageAlbum: UIImage?
+    
+    override init(id: String, type: ItemType) {
+        super.init(id: id, type: type)
+        
+        
+    }
+    
+    
+}
+
+class DiscoverBank{
+    var items: [DiscoverItem] = []
+    
+    init(){
+        items.append(MusicItem(id: "sssss", type: .music))
+    }
+    
 }
