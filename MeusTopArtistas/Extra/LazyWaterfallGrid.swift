@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LazyWaterfallGrid<Elements, Content>: View
-    where Elements: RandomAccessCollection, Elements.Element: Identifiable, Content: View {
+    where Elements: RandomAccessCollection, Content: View {
     
     var data: Elements
     

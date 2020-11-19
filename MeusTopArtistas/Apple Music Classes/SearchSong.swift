@@ -41,8 +41,9 @@ class SearchSong: Codable {
                 let search = try JSONDecoder().decode(SearchSong.self, from: data)
                 
                 DispatchQueue.main.async {
-                    let songs = search.results!.songs!
-                    completion(.success(songs))
+                    if let songs = search.results?.songs{
+                        completion(.success(songs))
+                    }
                 }
                 
                 

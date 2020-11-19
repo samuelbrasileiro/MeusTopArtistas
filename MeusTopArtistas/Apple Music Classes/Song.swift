@@ -26,7 +26,7 @@ class Song: Codable {
     ///   - completion: Block of asyncronous code that is processed at the end of the fetch
     class func fetch(songID: String, completion: @escaping (Result<Song,Error>) -> Void){
         
-        let url = URL(string: "https://api.music.apple.com/v1/catalog/us/songs/" + songID)!
+        let url = URL(string: "https://api.music.apple.com/v1/catalog/br/songs/" + songID)!
         var request = URLRequest(url: url)
         request.setValue("Bearer " + musicAcessTokenKey, forHTTPHeaderField: "Authorization")
         

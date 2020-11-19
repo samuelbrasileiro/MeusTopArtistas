@@ -8,16 +8,86 @@
 import UIKit
 import SwiftUI
 
+enum ItemType {
+    case music
+    case image
+}
+
+class DiscoverItem: ObservableObject {
+    var id: String
+    @Published var url: String?
+    var type: ItemType
+    
+    init(id: String, type: ItemType) {
+        self.id = id
+        self.type = type
+    }
+}
+
+class MusicItem: DiscoverItem {
+    @Published var title: String?
+    @Published var artistName: String?
+    
+    @Published var imageAlbumURL: String?
+    @Published var imageAlbum: UIImage?
+    
+    override init(id: String, type: ItemType) {
+        super.init(id: id, type: type)
+        
+        Song.fetch(songID: id){ result in
+            if case .success(let songs) = result{
+                if songs.data != nil{
+                    
+                    let song = songs.data![0].attributes!
+                    print("amei " + song.name!)
+                    self.title = song.name
+                    self.artistName = song.artistName
+                    self.url = song.previews?.first?.url
+                    self.imageAlbumURL = song.artwork?.url
+                    
+                    if self.imageAlbumURL != nil{
+                        self.getImage()
+                    }
+                    
+                }
+            }
+            else if case .failure(let error) = result{
+                print(error)
+            }
+        }
+    }
+    
+    /// From image URL this function downloads and saves the
+    /// image data in 'image' attribute
+    func getImage(){
+
+        let imageURL = imageAlbumURL?.replacingOccurrences(of: "{w}x{h}bb", with: "200x200")
+
+        let request = URLRequest(url: URL(string: imageURL!)!)
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let data = data else {
+                    return
+                }
+                
+                if let image = UIImage(data: data){
+                    self.imageAlbum = image
+                }
+            }
+        }.resume()
+    }
+    
+}
 
 /// This class is an artist object, that contains a name, imageURL and uri, at start.
 /// When created, it gets (async) its image and previewURL
-class Artist: ObservableObject, Identifiable {
+class Artist: ObservableObject {
     
     var name: String
     var imageURL: String?
     var uri: String
     
-    @Published var previewURL: String?
+    @Published var music: MusicItem?
     
     @Published var image: UIImage?
     
@@ -29,7 +99,7 @@ class Artist: ObservableObject, Identifiable {
         self.uri = uri
         
         getImage()
-        getPreviewURL()
+        getMusic()
         
     }
     
@@ -52,10 +122,11 @@ class Artist: ObservableObject, Identifiable {
     
     /// This function uses Apple Music API to get a song preview from the artist
     /// using search in scope
-    func getPreviewURL(){
+    func getMusic(){
         SearchSong.fetchBy(artistName: name){result in
             if case .success(let songs) = result {
-                self.previewURL = songs.data![0].attributes!.previews![0].url
+                print("alohomora")
+                self.music = MusicItem(id: songs.data![0].attributes!.playParams!.id!, type: .music) //songs.data![0].attributes!.previews![0].url
             }
             else if case .failure(let error) = result{
                 print(error.localizedDescription)

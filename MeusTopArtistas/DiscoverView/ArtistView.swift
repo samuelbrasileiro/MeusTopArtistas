@@ -44,16 +44,14 @@ struct ArtistView: View{
             }
             else{
                 
-                Text(artist.name)
-                    .padding()
-                    .background(backgroundColor)
-                    .foregroundColor(foregroundColor)
-                    .cornerRadius(10)
+                //Text(artist.name)
+                //    .padding()
+                //    .background(backgroundColor)
+                //    .foregroundColor(foregroundColor)
+                //    .cornerRadius(10)
                 
-                if artist.previewURL != nil{
-                    Link(destination: URL(string: artist.previewURL!)!){
-                        Image(systemName: "play.fill")
-                    }
+                if let music = artist.music{
+                    MusicView(item: music)
                 }
             }
         }
@@ -64,6 +62,66 @@ struct ArtistView: View{
     
 }
 
+struct MusicView: View{
+    
+    @ObservedObject var item: MusicItem
+    
+    @State var isSelected: Bool = false
+    
+    @State var stroke: Color = Color.clear
+    @State var foregroundColor: Color = Color(.systemPurple)
+    @State var backgroundColor: Color = Color(.systemGray5)
+    
+    var body: some View{
+        if let name = item.title{
+            Button(action: {
+                isSelected = !isSelected
+                if isSelected{
+                    stroke = Color(.systemPurple)
+                    foregroundColor = Color(.systemGray5)
+                    backgroundColor = Color(.systemPurple)
+                }
+                else{
+                    stroke = .clear
+                    foregroundColor = Color(.systemPurple)
+                    backgroundColor = Color(.systemGray5)
+                }
+                
+            }){
+                
+                HStack{
+                    
+                    VStack(alignment: .leading, spacing: 4){
+                        Text(name)
+                            .bold()
+                            .lineLimit(2)
+                            
+                        Text(item.artistName!)
+                            .font(.footnote)
+                            .lineLimit(2)
+                            
+                    }
+                    Spacer()
+                    Button(action: {
+                        
+                    }){
+                        Image(systemName: "play.fill")
+                    }
+                        
+                }
+                .padding()
+                .frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 100, alignment: .center)
+                .background(backgroundColor)
+                .foregroundColor(foregroundColor)
+                .cornerRadius(10)
+                
+            }
+        }
+        
+    }
+}
+
+
 struct ArtistView_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -72,44 +130,3 @@ struct ArtistView_Previews: PreviewProvider {
     }
 }
 
-enum ItemType {
-    case music
-    case image
-}
-
-class DiscoverItem{
-    var id: String
-    var url: String?
-    var type: ItemType
-    
-    init(id: String, type: ItemType){
-        self.id = id
-        self.type = type
-    }
-    
-}
-
-class MusicItem: DiscoverItem{
-    var title: String?
-    var artistName: String?
-    
-    var imageAlbumURL: String?
-    var imageAlbum: UIImage?
-    
-    override init(id: String, type: ItemType) {
-        super.init(id: id, type: type)
-        
-        
-    }
-    
-    
-}
-
-class DiscoverBank{
-    var items: [DiscoverItem] = []
-    
-    init(){
-        items.append(MusicItem(id: "sssss", type: .music))
-    }
-    
-}
